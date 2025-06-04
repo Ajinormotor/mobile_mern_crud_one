@@ -4,6 +4,7 @@ import cors from "cors"
 
 import authRoutes from "./routes/auth.routes.js"
 import bookRoutes from "./routes/book.routes.js"
+import job from "./lib/cron.js"
 
 import { connectDB } from "./lib/connectDB.js"
 
@@ -11,6 +12,8 @@ const app = express()
 dotenv.config();
 const PORT = process.env.PORT || 3000
 
+
+job.start(;)
 app.use(express.json())
 app.use(cors())
 
